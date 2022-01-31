@@ -99,7 +99,7 @@ export default function ShowCard() {
     <>
       <div className="flex justify-center ">
         <div className=" grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-4     ">
-          {food.map((product) => {
+          {food.map((product ,index) => {
             return (
               <div key={product.id}>
                 <Card
@@ -107,6 +107,7 @@ export default function ShowCard() {
                   catigory={product.catigory}
                   type={product.type}
                   price={product.price}
+                  index={index}
                 />
               </div>
             );

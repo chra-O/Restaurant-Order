@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Card(props) {
+  const [oredr, setorder] = useState();
   return (
     <>
       <div className="bg-gray-50 w-72 h-72 m-10  grid grid-rows-2 rounded-3xl">
@@ -14,7 +15,12 @@ export default function Card(props) {
           <div className=" grid grid-cols-2 font-mono">
             <p className="ml-3">Price : {props.price}$</p>
             <div>
-              <button className="bg-blue-200 p-2 px-3 rounded-full ml-10  text-slate-800 ">
+              <button
+                className="bg-blue-200 p-2 px-3 rounded-full ml-10  text-slate-800 "
+                onClick={() => {
+                  setorder(props.index);
+                }}
+              >
                 Order
               </button>
             </div>

@@ -5,8 +5,13 @@ import ShowCard from "../Component/ShowCard";
 export default function Home() {
   return (
     <>
-      <NavBar />
-      <div><ShowCard/></div>
+    {/* bg-neutral-700 */}
+      <div className="w-full h-full  overflow-hidden">
+        <NavBar />
+        <div>
+          <ShowCard />
+        </div>
+      </div>
     </>
   );
 }
