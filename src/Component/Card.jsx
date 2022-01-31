@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import addTolist from "../app/Slice";
+import { useDispatch } from "react-redux";
 
 export default function Card(props) {
-  const [oredr, setorder] = useState();
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="bg-gray-50 w-72 h-72 m-10  grid grid-rows-2 rounded-3xl">
@@ -11,15 +14,13 @@ export default function Card(props) {
 
         <div className=" grid  grid-rows-3  ">
           <div className=" text-lg  ml-3 font-mono ">{props.catigory}</div>
-          <div className=" ml-3 font-mono "> type : {props.type}</div>
+          <div className=" ml-3 font-mono "> type : {props.name}</div>
           <div className=" grid grid-cols-2 font-mono">
             <p className="ml-3">Price : {props.price}$</p>
             <div>
               <button
                 className="bg-blue-200 p-2 px-3 rounded-full ml-10  text-slate-800 "
-                onClick={() => {
-                  setorder(props.index);
-                }}
+                onClick={() => dispatch(addTolist(props.id))}
               >
                 Order
               </button>
