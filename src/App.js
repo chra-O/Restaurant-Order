@@ -1,9 +1,10 @@
 import "./App.css";
+import Home from "./Page/Home";
 
 function App() {
   return (
     <>
-      <p className="bg-slate-200 w-28 h-20"> hi</p>
+    <Home/>
     </>
   );
 }
