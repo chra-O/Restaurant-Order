@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import { useEffect } from "react";
 
 export default function ShowCard() {
   let food = [
@@ -95,6 +96,12 @@ export default function ShowCard() {
       price: "2",
     },
   ];
+  useEffect(() => {
+    fetch("https://test-44c0b-default-rtdb.firebaseio.com/food.json", {
+      method: "PUT",
+      body: JSON.stringify(food),
+    }).catch((e) => console.log(e));
+  });
   return (
     <>
       <div className="flex justify-center ">
@@ -109,6 +116,7 @@ export default function ShowCard() {
                   price={product.price}
                   index={index}
                   data={food}
+                  id={product.id}
                 />
               </div>
             );

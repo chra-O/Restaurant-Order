@@ -1,9 +1,21 @@
 import React from "react";
-import addTolist from "../app/Slice";
 import { useDispatch } from "react-redux";
-
+import { addindex } from "../Redux/slice";
 export default function Card(props) {
   const dispatch = useDispatch();
+
+  const handleAdd = (event) => {
+    console.log(props.id);
+    dispatch(
+      addindex({
+        id: props.id,
+        img: props.img,
+        catigory: props.catigory,
+        name: props.name,
+        price: props.price,
+      })
+    );
+  };
 
   return (
     <>
@@ -20,7 +32,7 @@ export default function Card(props) {
             <div>
               <button
                 className="bg-blue-200 p-2 px-3 rounded-full ml-10  text-slate-800 "
-                onClick={() => dispatch(addTolist(props.id))}
+                onClick={handleAdd}
               >
                 Order
               </button>
