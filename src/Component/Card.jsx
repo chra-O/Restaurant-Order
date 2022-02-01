@@ -5,7 +5,6 @@ export default function Card(props) {
   const dispatch = useDispatch();
 
   const handleAdd = (event) => {
-    console.log(props.id);
     dispatch(
       addindex({
         id: props.id,
