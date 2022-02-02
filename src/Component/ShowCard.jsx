@@ -143,7 +143,7 @@ export default function ShowCard() {
             <Link to="/Order">
               <img
                 className="sm:w-12 w-10 h-10  sm:h-12  cursor-pointer mt-2"
-                src="https://cdn-icons.flaticon.com/png/512/3765/premium/3765442.png?token=exp=1643630090~hmac=e6e75e1217e500ec6d0845d398405f55"
+                src="https://cdn-icons.flaticon.com/png/512/3765/premium/3765646.png?token=exp=1643829413~hmac=43ff56dfc858799e2dca2772c85200e4"
                 alt=""
               ></img>
             </Link>
@@ -172,7 +172,7 @@ export default function ShowCard() {
       <div   className={` ${
             isDark
               ? " flex justify-center "
-              : " flex justify-center bg-stone-200"
+              : " flex justify-center bg-stone-300"
           }`}>
         <div className=" grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-4     ">
           {food.map((product, index) => {

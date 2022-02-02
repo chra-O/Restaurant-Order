@@ -1,11 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
   value: JSON.parse(localStorage.getItem("food")) || [],
-  counter: 0,
-  theme: JSON.parse(localStorage.getItem('theme') ) || false
 
+  theme: JSON.parse(localStorage.getItem("theme")) || false,
 };
 
 const slice = createSlice({
@@ -21,19 +19,27 @@ const slice = createSlice({
       localStorage.setItem("food", JSON.stringify(state.value));
     },
     inc(state, action) {
-
-      state.counter += action.payload;
-  
+      const indrement = state.value.find(
+        (food) => food.name === action.payload
+      );
+      if (indrement) {
+        indrement.qualety += 1;
+      }
     },
     dec(state, action) {
-      state.counter -= action.payload;
-      
+      const decrement = state.value.find(
+        (food) => food.name === action.payload
+      );
+      if (decrement) {
+        if (decrement.qualety > 0) {
+          decrement.qualety -= 1;
+        }
+      }
     },
-    toggle(state){
-      state.theme = !state.theme
-      localStorage.setItem('theme', state.theme)
-  },
-   
+    toggle(state) {
+      state.theme = !state.theme;
+      localStorage.setItem("theme", state.theme);
+    },
   },
 });
 

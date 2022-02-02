@@ -8,7 +8,7 @@ export default function Order() {
   const orderFood = useSelector((state) => state.food.value);
 
   const isDark = useSelector((state) => state.food.theme);
-  const counter = useSelector((state) => state.food.counter);
+
   const dispatch = useDispatch();
   const totalPric = [];
   let tottal = 0;
@@ -56,7 +56,6 @@ export default function Order() {
               dispatch(toggle());
             }}
           >
-            
             {isDark ? (
               <img
                 className="sm:w-12 w-10 h-10  sm:h-12  cursor-pointer ml-4 "
@@ -79,7 +78,7 @@ export default function Order() {
         className={` ${
           isDark
             ? " flex justify-center   h-screen"
-            : " flex justify-center   h-screen bg-stone-200"
+            : " flex justify-center   h-screen bg-stone-300"
         }`}
       >
         <div className=" grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-4     ">
@@ -107,7 +106,7 @@ export default function Order() {
                   <div className=" ml-3 font-mono "> type : {product.name}</div>
                   <div className=" grid grid-cols-2 font-mono text-sm ">
                     <p className="ml-3">Price : {product.price}$</p>
-                    <div>Qualrty : {counter}</div>{" "}
+                    <div>Qualrty : {product.qualety}</div>{" "}
                   </div>
                   <div className="ml-7 mb-4">
                     {" "}
@@ -120,13 +119,13 @@ export default function Order() {
                     </button>{" "}
                     <button
                       className="mr-10 w-5 h-5 mt-2 ml-9"
-                      onClick={() => dispatch(inc(product.qualety))}
+                      onClick={() => dispatch(inc(product.name))}
                     >
                       <img src="https://cdn-icons-png.flaticon.com/128/25/25678.png"></img>
                     </button>
                     <button
                       className="mr-2 w-5 h-5 mt-2"
-                      onClick={() => dispatch(dec(product.qualety))}
+                      onClick={() => dispatch(dec(product.name))}
                     >
                       <img src="https://cdn-icons.flaticon.com/png/128/4655/premium/4655094.png?token=exp=1643741038~hmac=1a92c750766df0f1e4c3ac21436e5320"></img>
                     </button>
