@@ -3,8 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   value: JSON.parse(localStorage.getItem("food")) || [],
-  counter: JSON.parse(localStorage.getItem("q")) || null,
-  index: null,
+  counter: 0,
+  theme: JSON.parse(localStorage.getItem('theme') ) || false
+
 };
 
 const slice = createSlice({
@@ -20,17 +21,21 @@ const slice = createSlice({
       localStorage.setItem("food", JSON.stringify(state.value));
     },
     inc(state, action) {
+
       state.counter += action.payload;
-      localStorage.setItem("q", JSON.stringify(state.value));
+  
     },
     dec(state, action) {
       state.counter -= action.payload;
+      
     },
-    setindex(state, action) {
-      state.index = action.payload;
-    },
+    toggle(state){
+      state.theme = !state.theme
+      localStorage.setItem('theme', state.theme)
+  },
+   
   },
 });
 
-export const { deleteorder, addindex, dec, inc, setindex } = slice.actions;
+export const { deleteorder, addindex, dec, inc, toggle } = slice.actions;
 export default slice.reducer;

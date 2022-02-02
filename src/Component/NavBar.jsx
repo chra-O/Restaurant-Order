@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {toggle} from "../Redux/slice";
+import { useSelector, useDispatch } from "react-redux";
 export default function NavBar() {
+  const dispatch = useDispatch()
+  const isDark = useSelector(state => state.food.theme)
   return (
     <>
       {/* bg-amber-400 */}
       {/* https://cdn-icons-png.flaticon.com/512/1827/1827881.png
     https://cdn-icons-png.flaticon.com/512/1827/1827880.png */}
-      <div className="w-screen h-20 bg-amber-300 grid grid-cols-2 ">
+      <div  className={` ${isDark ? ' w-screen h-20 bg-amber-200 grid grid-cols-2' : ' w-screen h-20 bg-amber-400 grid grid-cols-2'}`}>
         <div className=" mt-6 md:ml-40 ml-5 font-mono  font-bold ">
           <p className=" inline mr-8 text-lg sm:text-lg  md:text-2xl text-stone-700">
             {" "}
@@ -24,7 +28,8 @@ export default function NavBar() {
               alt=""
             ></img>
           </Link>
-          <button>
+          <button onClick={()=>{dispatch(toggle())}}>
+            {}
             <img
               className="sm:w-12 w-10 h-10  sm:h-12  cursor-pointer ml-4 "
               src=" https://cdn-icons-png.flaticon.com/512/1827/1827880.png "
