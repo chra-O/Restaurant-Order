@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import NavBar from "../Component/NavBar";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteorder } from "../Redux/slice";
+import { deleteorder, inc, dec ,setindex } from "../Redux/slice";
 
 export default function Order() {
   const orderFood = useSelector((state) => state.food.value);
+  const ind = useSelector((state) => state.food.index);
+  const counter = useSelector((state) => state.food.counter);
   const dispatch = useDispatch();
   const totalPric = [];
   let tottal = 0;
@@ -20,7 +22,7 @@ export default function Order() {
       body: JSON.stringify(orderFood),
     }).catch((e) => console.log(e));
   });
-
+ console.log(ind)
   return (
     <>
       <NavBar />
@@ -51,7 +53,7 @@ export default function Order() {
                   <div className=" ml-3 font-mono "> type : {product.name}</div>
                   <div className=" grid grid-cols-2 font-mono text-sm ">
                     <p className="ml-3">Price : {product.price}$</p>
-                    <div>Qualrty :</div>{" "}
+                    <div>Qualrty : {counter}</div>{" "}
                   </div>
                   <div className="ml-7 mb-4">
                     {" "}
@@ -62,10 +64,16 @@ export default function Order() {
                       {" "}
                       Delete
                     </button>{" "}
-                    <button className="mr-10 w-5 h-5 mt-2 ml-9">
+                    <button
+                      className="mr-10 w-5 h-5 mt-2 ml-9"
+                      onClick={() => dispatch(inc(product.qualety))}
+                    >
                       <img src="https://cdn-icons-png.flaticon.com/128/25/25678.png"></img>
                     </button>
-                    <button className="mr-2 w-5 h-5 mt-2">
+                    <button
+                      className="mr-2 w-5 h-5 mt-2"
+                      onClick={() => dispatch(dec(product.qualety))}
+                    >
                       <img src="https://cdn-icons.flaticon.com/png/128/4655/premium/4655094.png?token=exp=1643741038~hmac=1a92c750766df0f1e4c3ac21436e5320"></img>
                     </button>
                   </div>

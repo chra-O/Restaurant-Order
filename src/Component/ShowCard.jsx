@@ -10,6 +10,7 @@ export default function ShowCard() {
       catigory: "Pizza",
       name: "Peperony ",
       price: 5,
+      qualety: 1,
     },
     {
       id: "2",
@@ -17,6 +18,7 @@ export default function ShowCard() {
       catigory: "Fried Chicken",
       name: "Chicken legs",
       price: 8,
+      qualety: 1,
     },
     {
       id: "3",
@@ -24,6 +26,7 @@ export default function ShowCard() {
       catigory: "Burger",
       name: "cheese Burger",
       price: 3.5,
+      qualety: 1,
     },
     {
       id: "4",
@@ -31,6 +34,7 @@ export default function ShowCard() {
       catigory: "Potato",
       name: "fries ",
       price: 2,
+      qualety: 0,
     },
     {
       id: "5",
@@ -38,6 +42,7 @@ export default function ShowCard() {
       catigory: "Potato",
       name: "chips",
       price: 2.5,
+      qualety: 0,
     },
     {
       id: "6",
@@ -45,6 +50,7 @@ export default function ShowCard() {
       catigory: "Salad",
       name: "Tabwla",
       price: 4,
+      qualety: 0,
     },
     {
       id: "7",
@@ -52,6 +58,7 @@ export default function ShowCard() {
       catigory: "Noodles",
       name: "Ramun ",
       price: 5.5,
+      qualety: 0,
     },
     {
       id: "8",
@@ -59,6 +66,7 @@ export default function ShowCard() {
       catigory: "Rice",
       name: "Bryany",
       price: 5,
+      qualety: 0,
     },
     {
       id: "9",
@@ -66,6 +74,7 @@ export default function ShowCard() {
       catigory: "Sweet",
       name: "Cake",
       price: 5,
+      qualety: 0,
     },
     {
       id: "10",
@@ -73,6 +82,7 @@ export default function ShowCard() {
       catigory: "Pasta",
       name: "pasta with meat bolls",
       price: 3.6,
+      qualety: 0,
     },
     {
       id: "11",
@@ -80,6 +90,7 @@ export default function ShowCard() {
       catigory: "Sweets",
       name: "Donat",
       price: 1.5,
+      qualety: 0,
     },
     {
       id: "12",
@@ -87,6 +98,7 @@ export default function ShowCard() {
       catigory: "Sweets",
       name: "Lokmada",
       price: 2.5,
+      qualety: 0,
     },
     {
       id: "13",
@@ -94,6 +106,7 @@ export default function ShowCard() {
       catigory: "Soup",
       name: "Mix",
       price: 2,
+      qualety: 0,
     },
   ];
   useEffect(() => {
@@ -117,6 +130,7 @@ export default function ShowCard() {
                   index={index}
                   data={food}
                   id={product.id}
+                  qualety={product.qualety}
                 />
               </div>
             );
