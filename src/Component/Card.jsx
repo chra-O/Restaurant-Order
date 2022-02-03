@@ -12,7 +12,7 @@ export default function Card(props) {
         catigory: props.catigory,
         name: props.name,
         price: props.price,
-        qualety :props.qualety
+        qualety: props.qualety,
       })
     );
   };
@@ -29,15 +29,13 @@ export default function Card(props) {
           <div className=" ml-3 font-mono "> type : {props.name}</div>
           <div className=" grid grid-cols-2 font-mono">
             <p className="ml-3">Price : {props.price}$</p>
-      
-            
-              <button
-                className="bg-blue-200 p-2 px-3 rounded-full mr-2   text-slate-800  mt-2"
-                onClick={handleAdd}
-              >
-                Order
-              </button>
-            
+
+            <button
+              className="bg-blue-200 p-2 px-3 rounded-full mr-2   text-slate-800  mt-2"
+              onClick={handleAdd}
+            >
+              Order
+            </button>
           </div>
         </div>
       </div>
