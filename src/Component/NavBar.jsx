@@ -36,12 +36,20 @@ export default function NavBar() {
               dispatch(toggle());
             }}
           >
+            {isDark ? (
+              <img
+                className="sm:w-12 w-10 h-10  sm:h-12  cursor-pointer ml-4 "
+                src=" https://cdn-icons-png.flaticon.com/512/1827/1827880.png "
+                alt=""
+              ></img>
+            ) : (
+              <img
+                className="sm:w-12 w-10 h-10  sm:h-12  cursor-pointer ml-4 "
+                src=" https://cdn-icons-png.flaticon.com/512/1827/1827881.png "
+                alt=""
+              ></img>
+            )}
             {}
-            <img
-              className="sm:w-12 w-10 h-10  sm:h-12  cursor-pointer ml-4 "
-              src=" https://cdn-icons-png.flaticon.com/512/1827/1827880.png "
-              alt=""
-            ></img>
           </button>
         </div>
       </div>
