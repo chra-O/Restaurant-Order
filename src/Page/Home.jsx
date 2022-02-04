@@ -8,7 +8,7 @@ export default function Home() {
     <>
       {/* bg-neutral-700 */}
       <NavBar/>
-      <div className="w-full h-full  overflow-hidden">
+      <div className="w-screen  ">
         
         <div>
           <ShowCard />
