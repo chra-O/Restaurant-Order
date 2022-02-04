@@ -4,6 +4,7 @@ const initialState = {
   value: JSON.parse(localStorage.getItem("food")) || [],
 
   theme: JSON.parse(localStorage.getItem("theme")) || false,
+  count: 0,
 };
 
 const slice = createSlice({
@@ -15,18 +16,24 @@ const slice = createSlice({
       localStorage.setItem("food", JSON.stringify(state.value));
     },
     addindex: (state, action) => {
-      state.value.push(action.payload);
-      localStorage.setItem("food", JSON.stringify(state.value));
+      const val = state.value.find((food) => food.index === action.payload.index);
+      if (!val) {
+        state.value.push(action.payload);
+        localStorage.setItem("food", JSON.stringify(state.value));
+      }
     },
-    inc(state, action) {
+    inc: (state, action) => {
       const indrement = state.value.find(
         (food) => food.name === action.payload
       );
       if (indrement) {
         indrement.qualety += 1;
       }
+      state.count = indrement.qualety * indrement.price;
     },
-    dec(state, action) {
+
+    ///////////////////////////
+    dec: (state, action) => {
       const decrement = state.value.find(
         (food) => food.name === action.payload
       );

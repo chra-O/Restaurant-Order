@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { deleteorder, inc, dec } from "../Redux/slice";
@@ -7,18 +7,22 @@ import NavBar from "../Component/NavBar";
 
 export default function Order() {
   const orderFood = useSelector((state) => state.food.value);
-
   const isDark = useSelector((state) => state.food.theme);
 
   const dispatch = useDispatch();
   const totalPric = [];
+
   let tottal = 0;
+
+  console.log(tottal);
+  totalPric.push(tottal);
   orderFood.map((product) => {
     totalPric.push(product.price);
   });
   totalPric.map((product) => {
     tottal += product;
   });
+
   useEffect(() => {
     fetch("https://test-44c0b-default-rtdb.firebaseio.com/order.json", {
       method: "PUT",

@@ -13,6 +13,7 @@ export default function Card(props) {
         name: props.name,
         price: props.price,
         qualety: props.qualety,
+        index :props.index
       })
     );
   };
