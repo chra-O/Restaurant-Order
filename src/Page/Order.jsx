@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { deleteorder, inc, dec } from "../Redux/slice";
@@ -8,21 +8,20 @@ import NavBar from "../Component/NavBar";
 export default function Order() {
   const orderFood = useSelector((state) => state.food.value);
   const isDark = useSelector((state) => state.food.theme);
-  // const count = useSelector((state) => state.food.count);
+
   const dispatch = useDispatch();
   const totalPric = [];
 
   let tottal = 0;
 
- let x
+  let x;
   totalPric.push(tottal);
   orderFood.map((product) => {
-   x=product.price*product.qualety
+    x = product.price * product.qualety;
     totalPric.push(x);
   });
-  console.log(x)
-  totalPric.map((product) => {
 
+  totalPric.map((product) => {
     tottal += product;
   });
 
@@ -40,11 +39,11 @@ export default function Order() {
         className=" "
         className={` ${
           isDark
-            ? " flex justify-center   h-screen "
-            : " flex justify-center   h-screen bg-stone-300"
+            ? " flex justify-center    h-screen "
+            : " flex justify-center      h-screen bg-stone-300"
         }`}
       >
-        <div className=" grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-4     ">
+        <div className=" grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-4   ">
           <div className="mt-40 font-bold text-2xl w-64 h-32 bg-gray-50  rounded-3xl">
             <p className="mt-12 ml-5">Total price : {tottal}$ </p>
           </div>
@@ -69,7 +68,7 @@ export default function Order() {
                   <div className=" ml-3 font-mono "> type : {product.name}</div>
                   <div className=" grid grid-cols-2 font-mono text-sm ">
                     <p className="ml-3">Price : {product.price}$</p>
-                    <div>Qualrty : {product.qualety}</div>{" "}
+                    <div>quantity: {product.qualety}</div>{" "}
                   </div>
                   <div className="ml-7 mb-4">
                     {" "}

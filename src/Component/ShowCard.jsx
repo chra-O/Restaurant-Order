@@ -123,11 +123,11 @@ export default function ShowCard() {
       <div
         className={` ${
           isDark
-            ? " flex justify-center  "
-            : " flex justify-center bg-stone-300"
+            ? " flex justify-center  w-full "
+            : " flex justify-center   w-full bg-stone-300"
         }`}
       >
-        <div className=" grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-4      ">
+        <div className=" grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-4    ">
           {food.map((product, index) => {
             return (
               <div key={product.id}>

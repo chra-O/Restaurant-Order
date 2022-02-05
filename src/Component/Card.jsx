@@ -20,7 +20,7 @@ export default function Card(props) {
 
   return (
     <>
-      <div className="bg-gray-50 w-72 h-72 m-10  grid grid-rows-2 rounded-3xl">
+      <div className="bg-gray-50 w-72 h-72 m-8 grid grid-rows-2 rounded-3xl ">
         <div className="flex justify-center ">
           <img className=" w-24 h-24  mt-10  " src={props.img} alt=""></img>
         </div>

@@ -10,8 +10,8 @@ export default function NavBar() {
       <div
         className={` ${
           isDark
-            ? " w-screen h-20 bg-amber-200 grid grid-cols-2"
-            : " w-screen h-20 bg-amber-400 grid grid-cols-2"
+            ? "  h-20 bg-amber-200 grid grid-cols-2 "
+            : "  h-20 bg-amber-400 grid grid-cols-2"
         }`}
       >
         <div className=" mt-6 md:ml-40 ml-5 font-mono  font-bold ">
