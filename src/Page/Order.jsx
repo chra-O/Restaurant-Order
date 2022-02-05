@@ -8,18 +8,21 @@ import NavBar from "../Component/NavBar";
 export default function Order() {
   const orderFood = useSelector((state) => state.food.value);
   const isDark = useSelector((state) => state.food.theme);
-
+  // const count = useSelector((state) => state.food.count);
   const dispatch = useDispatch();
   const totalPric = [];
 
   let tottal = 0;
 
-  console.log(tottal);
+ let x
   totalPric.push(tottal);
   orderFood.map((product) => {
-    totalPric.push(product.price);
+   x=product.price*product.qualety
+    totalPric.push(x);
   });
+  console.log(x)
   totalPric.map((product) => {
+
     tottal += product;
   });
 
