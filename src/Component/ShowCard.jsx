@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "./Card";
 import { useEffect } from "react";
 
-import { useSelector } from "react-redux";
-
+import ThemeContext from "../Contex/ThemeContext";
 export default function ShowCard() {
-  const isDark = useSelector((state) => state.food.theme);
+  const { theme } = useContext(ThemeContext);
   let food = [
     {
       id: "1",
@@ -121,10 +120,10 @@ export default function ShowCard() {
   return (
     <>
       <div
-        className={` ${
-          isDark
-            ? " flex justify-center  w-full "
-            : " flex justify-center   w-full bg-stone-300"
+        className={`${" flex justify-center    h-full "} ${
+          theme === "dark"
+            ? " flex justify-center      h-full bg-stone-300"
+            : null
         }`}
       >
         <div className=" grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-4    ">

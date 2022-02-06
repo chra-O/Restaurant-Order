@@ -1,19 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useContext } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { deleteorder, inc, dec } from "../Redux/slice";
-
+import ThemeContext from "../Contex/ThemeContext"
 import NavBar from "../Component/NavBar";
 
 export default function Order() {
+  const {theme} = useContext(ThemeContext)
   const orderFood = useSelector((state) => state.food.value);
-  const isDark = useSelector((state) => state.food.theme);
-
+  // const isDark = useSelector((state) => state.food.theme);
   const dispatch = useDispatch();
   const totalPric = [];
-
   let tottal = 0;
-
   let x;
   totalPric.push(tottal);
   orderFood.map((product) => {
@@ -35,14 +33,14 @@ export default function Order() {
   return (
     <>
       <NavBar />
-      <div
-        className=" "
-        className={` ${
-          isDark
-            ? " flex justify-center    h-screen "
-            : " flex justify-center      h-screen bg-stone-300"
-        }`}
-      >
+      <div className={`${" flex justify-center    h-screen "} ${theme==='dark'?" flex justify-center      h-screen bg-stone-300":null}`}
+       
+        // className={` ${
+        //   isDark
+        //     ? " flex justify-center    h-screen "
+        //     : " flex justify-center      h-screen bg-stone-300"
+        // }`}
+        >
         <div className=" grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-4   ">
           <div className="mt-40 font-bold text-2xl w-64 h-32 bg-gray-50  rounded-3xl">
             <p className="mt-12 ml-5">Total price : {tottal}$ </p>
