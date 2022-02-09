@@ -5,7 +5,7 @@ import Order from "./Page/Order";
 import ThemeContext from "./Contex/ThemeContext"
 import { useState } from "react";
 function App() {
-  const [themeState, setThemeState] = useState( "light");
+  const [themeState, setThemeState] = useState( localStorage.getItem("theme")||"light");
   
   function toggleTheme() {
  
