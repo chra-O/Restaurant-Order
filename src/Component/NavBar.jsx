@@ -6,10 +6,12 @@ export default function NavBar() {
 
 
   const {theme} = useContext(ThemeContext)
+  
   return (
     <>
       <ThemeContext.Consumer>
         {(ctx) => (
+         
      <div
      className={`${ "  h-20 bg-amber-200 grid grid-cols-2 "} ${
        theme === "dark"
@@ -17,7 +19,7 @@ export default function NavBar() {
          : null
      }`}
    >
-    
+    {localStorage.setItem("theme", ctx.theme)}
 
      
           <div className=" mt-6 md:ml-40 ml-5 font-mono  font-bold ">

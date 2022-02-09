@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   value: JSON.parse(localStorage.getItem("food")) || [],
 
-  theme: JSON.parse(localStorage.getItem("theme")) || false,
+ 
   count: 1,
 };
 
@@ -46,10 +46,7 @@ const slice = createSlice({
         state.count=decrement.qualety
       }
     },
-    toggle(state) {
-      state.theme = !state.theme;
-      localStorage.setItem("theme", state.theme);
-    },
+    
   },
 });
 

@@ -1,8 +1,8 @@
-import  { createContext }  from 'react'
+import { createContext } from "react";
 
 const ThemeContext = createContext({
-    theme: 'light',
-    themeToggler: ()=>{}
-})
+  theme: localStorage.getItem("theme") || "",
+  themeToggler: () => {},
+});
 
-export default ThemeContext
+export default ThemeContext;
