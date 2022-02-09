@@ -35,7 +35,7 @@ export default function NavBar() {
             <Link to="/Order">
               <img
                 className="sm:w-12 w-10 h-10  sm:h-12  cursor-pointer mt-2"
-                src="https://cdn-icons.flaticon.com/png/512/3765/premium/3765442.png?token=exp=1643630090~hmac=e6e75e1217e500ec6d0845d398405f55"
+                src="http://localhost:3000/image/order.png"
                 alt=""
               ></img>
             </Link>
@@ -43,13 +43,13 @@ export default function NavBar() {
               {ctx.theme === "dark" ? (
                 <img
                   className="sm:w-12 w-10 h-10  sm:h-12  cursor-pointer ml-4 "
-                  src=" https://cdn-icons-png.flaticon.com/512/1827/1827880.png "
+                  src="http://localhost:3000/image/light.png"
                   alt=""
                 ></img>
               ) : (
                 <img
                   className="sm:w-12 w-10 h-10  sm:h-12  cursor-pointer ml-4 "
-                  src=" https://cdn-icons-png.flaticon.com/512/1827/1827881.png "
+                  src="http://localhost:3000/image/dark.png"
                   alt=""
                 ></img>
               )}

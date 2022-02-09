@@ -8,7 +8,7 @@ import NavBar from "../Component/NavBar";
 export default function Order() {
   const {theme} = useContext(ThemeContext)
   const orderFood = useSelector((state) => state.food.value);
-  // const isDark = useSelector((state) => state.food.theme);
+
   const dispatch = useDispatch();
   const totalPric = [];
   let tottal = 0;
@@ -35,11 +35,7 @@ export default function Order() {
       <NavBar />
       <div className={`${" flex justify-center    h-screen "} ${theme==='dark'?" flex justify-center      h-screen bg-stone-300":null}`}
        
-        // className={` ${
-        //   isDark
-        //     ? " flex justify-center    h-screen "
-        //     : " flex justify-center      h-screen bg-stone-300"
-        // }`}
+      
         >
         <div className=" grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-4   ">
           <div className="mt-40 font-bold text-2xl w-64 h-32 bg-gray-50  rounded-3xl">
@@ -82,7 +78,7 @@ export default function Order() {
                       onClick={() => dispatch(inc(product.name))}
                     >
                       <img
-                        src="https://cdn-icons-png.flaticon.com/128/25/25678.png"
+                        src="http://localhost:3000/image/up.png"
                         alt=""
                       ></img>
                     </button>
@@ -91,7 +87,7 @@ export default function Order() {
                       onClick={() => dispatch(dec(product.name))}
                     >
                       <img
-                        src="https://cdn-icons.flaticon.com/png/128/4655/premium/4655094.png?token=exp=1643741038~hmac=1a92c750766df0f1e4c3ac21436e5320"
+                        src="http://localhost:3000/image/down.png"
                         alt="
                       "
                       ></img>
